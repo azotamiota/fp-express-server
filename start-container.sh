@@ -1,8 +1,9 @@
+MSYS_NO_PATHCONV=1 \
 docker run -it \
--e PORT=3000 \
--p 3000:3000 \
---name express-api \
+-e PORT=3000
+-p 5000:3000 \
+--name my-practice\
 -w /code \
---mount type="bind",source="%cd%",target=/code \
+--mount type="bind",source=/$(pwd),target=//code \
 node:slim \
-bash -c "npm install && npm run dev"
+bash -c "npm install && npm run dev" 
